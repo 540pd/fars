@@ -1,0 +1,31 @@
+---
+title: "fars Functions"
+output: rmarkdown::html_vignette
+author: "Abhimanyu"
+date: "2024-10-02"
+vignette: >
+  %\VignetteIndexEntry{More_about_fars}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Using Fars package
+
+### Objective
+The purpose of this package share some R functions to analyse data from the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System] (https://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)), which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. The data is available [here](https://d3c33hcgiwev3.cloudfront.net/_e1adac2a5f05192dc8780f3944feec13_fars_data.zip?Expires=1707696000&Signature=iORbQ-vV0bliIc6bNgk0olmy6~VPS1keNfk8hYZ~5DhiWF2vh6PBBJFFsMTnmXzPAta0kAMlfydbXWBDW-Xix3gy0nyKzCLfyr2YCxB23b2caYnsae8HvZHv7VdOUx8SjxByHw1lj9JDUYjUuuOwlMeKrzdFnvKUktnTxN4LAfA_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A).
+
+
+#### To create tibble data from csv file
+```{r messages = FALSE, echo = TRUE, eval=FALSE}
+library(fars)
+fars_df<-fars_read("C://abc/file2.csv")
+head(fars_df)
+```
+This function reads file given and converts to tibble format. It takes character string representing path of the file and returns tibble dataframe.
