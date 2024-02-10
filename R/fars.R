@@ -1,3 +1,4 @@
+utils::globalVariables(c("year", "STATE", "MONTH", "n"))
 #' Create tibble data from csv file
 #'
 #' This function reads file given and converts to tibble format
@@ -79,7 +80,7 @@ fars_read_years <- function(years) {
       dat <- fars_read(file)
       dat %>%
       dplyr::mutate(year = year) %>%
-        dplyr::mutate(.data$MONTH, .data$year)
+        dplyr::mutate(MONTH, year)
     }, error = function(e) {
       warning("invalid year: ", year)
       return(NULL)
